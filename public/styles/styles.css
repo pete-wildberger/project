@@ -63,6 +63,7 @@
 
 .sidenav .navItem:hover, .offcanvas .navItem:focus {
   background-color: #52489C;
+  cursor: pointer;
 }
 
 

@@ -57,21 +57,23 @@
 
     <!-- home page -->
     <div ng-if="pc.loggedIn" class="container-fluid">
+
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a>Hi, {{pc.name}}</a>
-        <a class="navItem"href="#">Patients</a>
-        <a class="navItem"href="#">Appointments</a>
+        <a class="navItem">Patients</a>
+        <a class="navItem">Appointments</a>
+        <a class="navItem" ng-click="pc.logOut()">LOGOUT</a>
       </div>
 
-      <!-- opens sidenav -->
-      <img ng-src="assets/barsHorizontal.png" onclick="openNav()" />
+    <!-- opens sidenav -->
+    <img ng-src="assets/barsHorizontal.png" onclick="openNav()" />
 
-      <div id="main">
-        <ng-view></ng-view>
-      </div>
-
+    <div id="main">
+      <ng-view></ng-view>
     </div>
+
+  </div>
 
   </main>
 </body>

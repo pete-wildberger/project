@@ -74,10 +74,13 @@ vm.unwelcome = function() {
     });
   }
 };//end register()
+
   vm.logOut = function(){
+    console.log('logout');
     vm.name = '';
-    vm.userRegister = '';
-    vm.loggedIn = !vm.loggedIn;
-  };
+    vm.welcome = true;
+    vm.registering = false;
+    vm.loggedIn = false;
+  }; //end logout()
 
 });
