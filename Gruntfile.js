@@ -10,9 +10,12 @@ module.exports = function(grunt) {
           'public/build/app.min.js': [
             'public/scripts/raw.js',
             'public/scripts/app.js',
-            'public/scripts/config.js',
+            'public/scripts/ngconfig.js',
             'public/scripts/controllers/ProjectController.js',
-            'public/scripts/services/http.Service.js'
+            'public/scripts/controllers/patientController.js',
+            'public/scripts/services/http.Service.js',
+            'public/scripts/services/loggedIn.Service.js'
+
 
           ],
 

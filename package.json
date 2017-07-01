@@ -10,6 +10,8 @@
   "author": "Peter Wildberger",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",

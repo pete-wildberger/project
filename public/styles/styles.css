@@ -1,3 +1,4 @@
+/*login*/
 .login {
   margin: auto;
   text-align: center;
@@ -22,7 +23,12 @@
 .submit:hover {
   background-color: #52489C;
 }
+/*end login*/
 
+/*patient page*/
+.patientInfo{
+overflow: scroll;
+}
 
 /* The side navigation menu */
 
@@ -95,4 +101,30 @@
   .sidenav a {
     font-size: 18px;
   }
+}
+
+/*table styles*/
+table {
+    color: #333;
+    font-family: Helvetica;
+    width: 800px;
+    border-collapse:
+    collapse; border-spacing: 0;
+    margin: auto;
+}
+
+td, th {
+    border: 1px solid transparent;
+    height: 30px;
+    transition: all 0.3s;
+}
+
+th {
+    background: #DFDFDF;
+    font-weight: bold;
+}
+
+td {
+    background: #FAFAFA;
+    text-align: center;
 }

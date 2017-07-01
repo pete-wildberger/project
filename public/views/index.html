@@ -3,10 +3,12 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@Ease</title>
   <!-- vendors -->
   <script src="/vendors/angular.min.js" charset="utf-8"></script>
-  <!-- <script src="/vendors/angular-route.min.js" charset="utf-8"></script> -->
+  <script src="/vendors/angular-route.min.js" charset="utf-8"></script>
   <script src="/vendors/sweetalert2.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="/vendors/sweetalert2.min.css">
   <link rel="stylesheet" href="/vendors/bootstrap.min.css">
@@ -16,12 +18,15 @@
   <!-- Javascript -->
   <script src="/scripts/raw.js" charset="utf-8"></script>
   <script src="/scripts/app.js" charset="utf-8"></script>
-  <!-- <script src="/scripts/config.js" charset="utf-8"></script> -->
+  <script src="/scripts/ngconfig.js" charset="utf-8"></script>
+  <!-- Controllers -->
   <script src="/scripts/controllers/ProjectController.js" charset="utf-8"></script>
+  <script src="/scripts/controllers/patientController.js" charset="utf-8"></script>
+  <!-- Services -->
   <script src="/scripts/services/http.Service.js" charset="utf-8"></script>
+  <script src="/scripts/services/loggedIn.Service.js" charset="utf-8"></script>
 
   <!-- CSS/fonts -->
-  <link rel="stylesheet" href="/vendors/glyphicons-halflings-regular.svg">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="/styles/styles.css">
 </head>

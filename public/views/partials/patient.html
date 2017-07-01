@@ -1,29 +1,39 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" ng-if="pc.newForm">
     <div class="col-xs-12">
+      <form name="newForm">
+        <input type="text" placeholder="First Name" ng-model="pc.inputed.firstNameIn">
+        <input type="text" placeholder="Last Name" ng-model="pc.inputed.lastNameIn">
+        <input type='number' ng-model="pc.inputed.phoneIn" placeholder='Phone Number'>
+        <input type="email" placeholder="Email" ng-model="pc.inputed.emailIn">
+        <button type="button" ng-click="pc.savePatient()">Save</button>
+      </form>
     </div>
   </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <i class="glyphicon glyphicon-search"></i><input type="text" name="" value="">
-      <table>
-        <tr>
-          <th ng-click="orderByMe('first')">First Name</th>
-          <th ng-click="orderByMe('last')">Last Name</th>
-          <th>Employee ID</th>
-          <th>Job Title</th>
-          <th>Pay</th>
-          <th></th>
-        </tr>
-        <tr ng-repeat='employees in pc.employees | orderBy:myOrderBy'>
-          <td>{{ employees.first | lowercase}}</td>
-          <td>{{ employees.last | uppercase}}</td>
-          <td>{{ employees.id }}</td>
-          <td>{{ employees.title | json}}</td>
-          <td>{{ employees.pay | currency}}</td>
-          <td><button ng-click='pc.removePatient($index)'>DELETE</button></td>
-        </tr>
-      </table>
+  <div class="row">
+    <div class="col-xs-12 patientInfo">
+      <form>
+        <input type="text" ng-model="pc.searchPatient">
+        <button type="button" ng-click="pc.newPatient()">New Patient</button>
+      </form>
+          <table>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Phone Number</th>
+              <th>eMail</th>
+              <!-- <th>Pay</th> -->
+              <th></th>
+            </tr>
+            <tr ng-repeat='x in pc.patientsArray | filter : pc.searchPatient'>
+              <td>{{ x.firstname }}</td>
+              <td>{{ x.lastname }}</td>
+              <td>{{ x.phone }}</td>
+              <td>{{ x.email }}</td>
+              <td></td>
+              <!-- <td><button ng-click='pc.removePatient($index)'>DELETE</button></td> -->
+            </tr>
+          </table>
     </div>
   </div>
 

@@ -1,15 +1,15 @@
 app.config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: "/views/partials/patient.html",
-        controller: "ProjectController"
+        controller: "PatientController as pc"
     }).when('/appointments', {
         templateUrl: "views/partials/appointment.html",
-        controller: "ProjectController"
+        controller: "ProjectController as pc"
     }).when('/profile', {
         templateUrl: "views/partials/profile.html",
-        controller: "ProjectController"
+        controller: "ProjectController as pc"
     }).when('/notes', {
         templateUrl: "views/partials/notes.html",
-        controller: "ProjectController"
+        controller: "ProjectController as pc"
     });
 });

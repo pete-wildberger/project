@@ -1,10 +1,10 @@
-app.controller('ProjectController', function($location, httpService) {
+app.controller('ProjectController', function($location, httpService, loggedInService) {
   const vm = this;
   vm.welcome = true;
   vm.registering = false;
   vm.loggedIn = false;
 
-  console.log('NG YO');
+  console.log('ProjectController');
 
   vm.go = function(path) {
             $location.path(path);
@@ -27,7 +27,7 @@ vm.unwelcome = function() {
         vm.welcome = false;
         vm.registering = false;
         vm.loggedIn = true;
-        vm.name = credentials.username;
+        loggedInService.logInName = credentials.username;
         vm.inputed = '';
       } else {
         swal(
@@ -77,7 +77,7 @@ vm.unwelcome = function() {
 
   vm.logOut = function(){
     console.log('logout');
-    vm.name = '';
+    loggedInService.logInName = '';
     vm.welcome = true;
     vm.registering = false;
     vm.loggedIn = false;

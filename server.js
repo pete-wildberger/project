@@ -4,15 +4,16 @@ var app = express();
 var index = require('./modules/routes/index');
 
 var register = require('./modules/routes/register');
-
+var patients = require('./modules/routes/patients');
 
 //uses
 app.use(express.static ('public'));
 
 
 app.use('/', index);
-
 app.use('/register', register);
+app.use('/patients', patients);
+
 //globals
 var port = process.env.PORT || 2017;
 
