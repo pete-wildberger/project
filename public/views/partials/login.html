@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row header">
+    <h1>Welcome to the Bored Board</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12 post">
+      <div id="register" ng-hide="bb.loggedIn">
+        <h2>Come on BoredBoard!</h2>
+        <form name="login" novalidate>
+          <input class="authIn" placeholder="username" ng-model="bb.userRegister" required>
+          <input class="authIn" placeholder="password" type="password" ng-model="bb.inputed.passwordRegister" required>
+          <button class="submit" ng-click="bb.logIn()" ng-disabled="login.$invalid">LOG IN</button>
+          <button class="submit" ng-click="bb.register()" ng-disabled="login.$invalid">REGISTER</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
