@@ -37,8 +37,7 @@
   /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #111;
-  /* Black*/
+  background-color: #4062BB;
   overflow-x: hidden;
   /* Disable horizontal scroll */
   padding-top: 60px;
@@ -54,7 +53,7 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: white;
   display: block;
   transition: 0.3s
 }
@@ -62,8 +61,8 @@
 
 /* When you mouse over the navigation links, change their color */
 
-.sidenav a:hover, .offcanvas a:focus {
-  color: #f1f1f1;
+.sidenav .navItem:hover, .offcanvas .navItem:focus {
+  background-color: #52489C;
 }
 
 
