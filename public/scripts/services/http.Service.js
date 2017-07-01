@@ -1,16 +1,7 @@
 app.service('httpService', function($http) {
   var sv = this;
 
-  sv.getPosts = function(path) {
-    return $http.get(path).then(function(response) {
-      return response.data;
-    });
-  };
-  sv.postPosts = function(path, its) {
-    return $http.post(path, its).then(function(response) {
-      console.log('back from server with:', response);
-    });
-  };
+  //logins
   sv.sendLogIn = function(credentials) {
     console.log('in Service');
     return $http.post('/', credentials).then(function(res) {
@@ -25,5 +16,23 @@ app.service('httpService', function($http) {
       return res;
     });
   };
+
+  //httpServices
+  sv.getPosts = function(path) {
+    return $http.get(path).then(function(response) {
+      return response.data;
+    });
+  };
+  sv.postPosts = function(path, its) {
+    return $http.post(path, its).then(function(response) {
+      console.log('back from server with:', response);
+    });
+  };
+  sv.deletePost = function(path, id) {
+      return $http.delete(path + '/'+ id).then(function(response){
+        console.log('deleted', response);
+        return response;
+      });
+    };
 
 });

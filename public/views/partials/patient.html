@@ -22,16 +22,16 @@
               <th>Last Name</th>
               <th>Phone Number</th>
               <th>eMail</th>
-              <!-- <th>Pay</th> -->
-              <th></th>
+              <th>Notes</th>
+              <th>Delete</th>
             </tr>
             <tr ng-repeat='x in pc.patientsArray | filter : pc.searchPatient'>
               <td>{{ x.firstname }}</td>
               <td>{{ x.lastname }}</td>
               <td>{{ x.phone }}</td>
               <td>{{ x.email }}</td>
-              <td></td>
-              <!-- <td><button ng-click='pc.removePatient($index)'>DELETE</button></td> -->
+              <td><button ng-click="pc.go('/profile')">Profile</button></td>
+              <td><button ng-click='pc.removePatient(x._id)'>DELETE</button></td>
             </tr>
           </table>
     </div>
