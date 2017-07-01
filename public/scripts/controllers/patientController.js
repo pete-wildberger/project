@@ -5,6 +5,10 @@ app.controller('PatientController', function($location, httpService, loggedInSer
   vm.newForm = false;
   vm.patientsArray = [];
 
+  vm.go = function(path) {
+            $location.path(path);
+          };
+          
   //new patient
   vm.newPatient = function() {
     console.log('newpatient');
@@ -36,10 +40,6 @@ app.controller('PatientController', function($location, httpService, loggedInSer
       console.log('response is: ', response);
       vm.showPatients();
     });
-
-
-
-
   };
 
   vm.showPatients = function() {

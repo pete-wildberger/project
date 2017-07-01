@@ -3,7 +3,7 @@ app.controller('ProjectController', function($location, httpService, loggedInSer
   vm.welcome = true;
   vm.registering = false;
   vm.loggedIn = false;
-
+  vm.name = '';
   console.log('ProjectController');
 
   vm.go = function(path) {
@@ -27,6 +27,7 @@ vm.unwelcome = function() {
         vm.welcome = false;
         vm.registering = false;
         vm.loggedIn = true;
+        vm.name = credentials.username;
         loggedInService.logInName = credentials.username;
         vm.inputed = '';
       } else {
@@ -77,6 +78,7 @@ vm.unwelcome = function() {
 
   vm.logOut = function(){
     console.log('logout');
+    vm.name='';
     loggedInService.logInName = '';
     vm.welcome = true;
     vm.registering = false;

@@ -11,29 +11,33 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 patientInfo">
-      <form>
+    <div class="col-xs-12 patientBar">
+      <form name="patientBar">
         <input type="text" ng-model="pc.searchPatient">
         <button type="button" ng-click="pc.newPatient()">New Patient</button>
       </form>
-          <table>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Phone Number</th>
-              <th>eMail</th>
-              <th>Notes</th>
-              <th>Delete</th>
-            </tr>
-            <tr ng-repeat='x in pc.patientsArray | filter : pc.searchPatient'>
-              <td>{{ x.firstname }}</td>
-              <td>{{ x.lastname }}</td>
-              <td>{{ x.phone }}</td>
-              <td>{{ x.email }}</td>
-              <td><button ng-click="pc.go('/profile')">Profile</button></td>
-              <td><button ng-click='pc.removePatient(x._id)'>DELETE</button></td>
-            </tr>
-          </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 patientInfo">
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone Number</th>
+          <th>eMail</th>
+          <th>Notes</th>
+          <th>Delete</th>
+        </tr>
+        <tr ng-repeat='x in pc.patientsArray | filter : pc.searchPatient'>
+          <td>{{ x.firstname }}</td>
+          <td>{{ x.lastname }}</td>
+          <td>{{ x.phone }}</td>
+          <td>{{ x.email }}</td>
+          <td><button ng-click="pc.go('/profile')">Profile</button></td>
+          <td><button ng-click='pc.removePatient(x._id)'>DELETE</button></td>
+        </tr>
+      </table>
     </div>
   </div>
 

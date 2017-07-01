@@ -1,12 +1,15 @@
 /*login*/
+
 .login {
   margin: auto;
   text-align: center;
 }
-.authIn{
+
+.authIn {
   font-size: 16px;
   margin: 5px;
 }
+
 .submit {
   background-color: #4062BB;
   border: none;
@@ -23,12 +26,22 @@
 .submit:hover {
   background-color: #52489C;
 }
+
+
 /*end login*/
 
+
 /*patient page*/
-.patientInfo{
-overflow: scroll;
+
+.patientInfo {
+  overflow: scroll;
 }
+
+.patientBar {
+  align-items: center;
+  margin: auto;
+}
+
 
 /* The side navigation menu */
 
@@ -103,28 +116,30 @@ overflow: scroll;
   }
 }
 
+
 /*table styles*/
+
 table {
-    color: #333;
-    font-family: Helvetica;
-    width: 800px;
-    border-collapse:
-    collapse; border-spacing: 0;
-    margin: auto;
+  color: #333;
+  font-family: Helvetica;
+  width: 800px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: auto;
 }
 
 td, th {
-    border: 1px solid transparent;
-    height: 30px;
-    transition: all 0.3s;
+  border: 1px solid transparent;
+  height: 30px;
+  transition: all 0.3s;
 }
 
 th {
-    background: #DFDFDF;
-    font-weight: bold;
+  background: #DFDFDF;
+  font-weight: bold;
 }
 
 td {
-    background: #FAFAFA;
-    text-align: center;
+  background: #FAFAFA;
+  text-align: center;
 }
