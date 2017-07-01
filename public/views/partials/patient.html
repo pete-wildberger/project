@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <i class="glyphicon glyphicon-search"></i><input type="text" name="" value="">
+      <table>
+        <tr>
+          <th ng-click="orderByMe('first')">First Name</th>
+          <th ng-click="orderByMe('last')">Last Name</th>
+          <th>Employee ID</th>
+          <th>Job Title</th>
+          <th>Pay</th>
+          <th></th>
+        </tr>
+        <tr ng-repeat='employees in pc.employees | orderBy:myOrderBy'>
+          <td>{{ employees.first | lowercase}}</td>
+          <td>{{ employees.last | uppercase}}</td>
+          <td>{{ employees.id }}</td>
+          <td>{{ employees.title | json}}</td>
+          <td>{{ employees.pay | currency}}</td>
+          <td><button ng-click='pc.removePatient($index)'>DELETE</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

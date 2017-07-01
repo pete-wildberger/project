@@ -21,6 +21,7 @@
   <script src="/scripts/services/http.Service.js" charset="utf-8"></script>
 
   <!-- CSS/fonts -->
+  <link rel="stylesheet" href="/vendors/glyphicons-halflings-regular.svg">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="/styles/styles.css">
 </head>
@@ -61,8 +62,8 @@
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a>Hi, {{pc.name}}</a>
-        <a class="navItem">Patients</a>
-        <a class="navItem">Appointments</a>
+        <a class="navItem" href="#/!">Patients</a>
+        <a class="navItem"href="#!appointment">Appointments</a>
         <a class="navItem" ng-click="pc.logOut()">LOGOUT</a>
       </div>
 
