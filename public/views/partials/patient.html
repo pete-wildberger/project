@@ -11,11 +11,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 patientBar">
-      <form name="patientBar">
-        <input type="text" ng-model="pc.searchPatient">
-        <button type="button" ng-click="pc.newPatient()">New Patient</button>
-      </form>
+    <div class="col-xs-12">
+      <div class="patientBar">
+        <form name="patientUtil">
+          <input class="searchArea" type="text" ng-model="pc.searchPatient" placeholder="&#x1f50d Search">
+          <button class="newButton" type="button" ng-click="pc.newPatient()">New Patient</button>
+        </form>
+      </div>
     </div>
   </div>
   <div class="row">

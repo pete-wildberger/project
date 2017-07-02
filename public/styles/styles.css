@@ -34,14 +34,20 @@
 /*patient page*/
 
 .patientInfo {
+  margin-top: 5px;
   overflow: scroll;
 }
 
 .patientBar {
-  align-items: center;
+  width: 800px;
   margin: auto;
 }
-
+.searchArea{
+  float: left;
+}
+.newButton{
+  float: right;
+}
 
 /* The side navigation menu */
 
@@ -136,6 +142,7 @@ td, th {
 
 th {
   background: #DFDFDF;
+  text-align: center;
   font-weight: bold;
 }
 

@@ -31,11 +31,11 @@ vm.unwelcome = function() {
         loggedInService.logInName = credentials.username;
         vm.inputed = '';
       } else {
-        swal(
-          'Opps...',
-          "We can't find your username",
-          'question'
-        );
+        // swal(
+        //   'Opps...',
+        //   "We can't find your username",
+        //   'question'
+        // );
 
       }
 
@@ -43,11 +43,11 @@ vm.unwelcome = function() {
   };
   vm.register = function() {
     if(vm.inputed.password != vm.inputed.password2){
-      swal(
-        'Oops...',
-        'We said "type your password TWICE"',
-        'error'
-      );
+      // swal(
+      //   'Oops...',
+      //   'We said "type your password TWICE"',
+      //   'error'
+      // );
       vm.inputed = '';
     } else {
     var credentials = {
@@ -59,18 +59,18 @@ vm.unwelcome = function() {
       vm.inputed = '';
       console.log(res);
       if (res.status == 201) {
-        swal(
-          'Good job!',
-          'You are now registered!',
-          'success'
-        );
+        // swal(
+        //   'Good job!',
+        //   'You are now registered!',
+        //   'success'
+        // );
         vm.unwelcome();
       } else {
-        swal(
-          'Oops...',
-          'Something went wrong!',
-          'error'
-        );
+        // swal(
+        //   'Oops...',
+        //   'Something went wrong!',
+        //   'error'
+        // );
       }
     });
   }
