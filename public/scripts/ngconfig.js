@@ -7,9 +7,9 @@ app.config(function($routeProvider) {
         controller: "ProjectController as pc"
     }).when('/profile', {
         templateUrl: "views/partials/profile.html",
-        controller: "ProjectController as pc"
+        controller: "PatientController as pc"
     }).when('/notes', {
         templateUrl: "views/partials/notes.html",
-        controller: "ProjectController as pc"
+        controller: "PatientController as pc"
     });
 });

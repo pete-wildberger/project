@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12" >
+      <div ng-repeat="x in pc.profileArray">
+        <h3>Patient</h3>
+        <p>{{ x.firstname }}</p>
+        <p>{{ x.lastname }}</p>
+        <p>{{ x.phone }}</p>
+        <p>{{ x.email }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-if="pc.newForm">
+    <div class="col-xs-12">
+      <form name="newForm">
+        <input type="number" placeholder="Duration" ng-model="pc.inputed.durationIn">
+        <input type="date" placeholder="Last Name" ng-model="pc.inputed.dateIn">
+        <input type='time'  placeholder='Time' ng-model="pc.inputed.timeIn">
+        <input type="text" placeholder="Massage type" ng-model="pc.inputed.mTypeIn">
+        <button type="button" ng-click="pc.saveAppointment(x._id)">Save</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="patientBar">
+        <form name="patientUtil">
+          <input class="searchArea" type="text" ng-model="pc.searchPatient" placeholder="&#x1f50d Search">
+          <button class="newButton" type="button" ng-click="pc.newPatient()">New Appointment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 patientInfo">
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Massage type</th>
+          <th>Duration</th>
+          <th>Notes</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr ng-repeat='z in pc.profileArray.appointments | filter : pc.searchPatient'>
+          <td>{{ z.date }}</td>
+          <td>{{ z.time }}</td>
+          <td>{{ z.mType }}</td>
+          <td>{{ z.duration }}</td>
+          <td><button ng-click="pc.go('/notes')">Notes</button></td>
+          <td><button ng-click='pc.removeAppointment(x._id)'>DELETE</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

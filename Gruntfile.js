@@ -9,6 +9,7 @@ module.exports = function(grunt) {
         files: {
           'public/build/app.min.js': [
             'public/scripts/raw.js',
+            'public/scripts/classes.js',
             'public/scripts/app.js',
             'public/scripts/ngconfig.js',
             'public/scripts/controllers/ProjectController.js',
