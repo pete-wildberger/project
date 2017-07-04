@@ -1,12 +1,27 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12" >
-      <div ng-repeat="x in pc.profileArray">
+    <div class="col-xs-12">
+
+
         <h3>Patient</h3>
-        <p>{{ x.firstname }}</p>
-        <p>{{ x.lastname }}</p>
-        <p>{{ x.phone }}</p>
-        <p>{{ x.email }}</p>
+      <div class="profInfo" ng-repeat="x in pc.patInfo">
+        <p>Name: {{ x.firstname }} {{  x.lastname }}</p>
+        <p>Phone Number: {{  x.phone }}</p>
+        <p>Email: {{  x.email }}</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+
+
+        <h3>Patient Service</h3>
+      <div class="profInfo" ng-repeat="y in loggedInService.profileView">
+        <p>Name: {{ y.firstname }} {{  y.lastname }}</p>
+        <p>Phone Number: {{  y.phone }}</p>
+        <p>Email: {{  y.email }}</p>
+
       </div>
     </div>
   </div>
@@ -15,9 +30,9 @@
       <form name="newForm">
         <input type="number" placeholder="Duration" ng-model="pc.inputed.durationIn">
         <input type="date" placeholder="Last Name" ng-model="pc.inputed.dateIn">
-        <input type='time'  placeholder='Time' ng-model="pc.inputed.timeIn">
+        <input type='time' placeholder='Time' ng-model="pc.inputed.timeIn">
         <input type="text" placeholder="Massage type" ng-model="pc.inputed.mTypeIn">
-        <button type="button" ng-click="pc.saveAppointment(x._id)">Save</button>
+        <button type="button" ng-click="pc.saveAppointment(pc.patInfo._id)">Save</button>
       </form>
     </div>
   </div>
@@ -43,11 +58,11 @@
           <th></th>
           <th></th>
         </tr>
-        <tr ng-repeat='z in pc.profileArray.appointments | filter : pc.searchPatient'>
-          <td>{{ z.date }}</td>
-          <td>{{ z.time }}</td>
-          <td>{{ z.mType }}</td>
-          <td>{{ z.duration }}</td>
+        <tr ng-repeat='x in vm.patInfo.appointments | filter : pc.searchPatient'>
+          <td>{{ x.date }}</td>
+          <td>{{ x.time }}</td>
+          <td>{{ x.mType }}</td>
+          <td>{{ x.duration }}</td>
           <td><button ng-click="pc.go('/notes')">Notes</button></td>
           <td><button ng-click='pc.removeAppointment(x._id)'>DELETE</button></td>
         </tr>

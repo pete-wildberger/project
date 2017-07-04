@@ -15,8 +15,14 @@ router.use(bodyParser.json());
 
 router.post('/', function(req, res) {
     console.log('in patients.js, post to /, req.body is:', req.body);
-    patients(req.body).save();
-    res.send('saved');
+    patients(req.body).save().then(function(err) {
+        if (!err) {
+            res.send('nudes');
+        } else {
+            res.send('error');
+        }
+    });
+
 });
 
 router.get('/', function(req, res) {
@@ -31,19 +37,16 @@ router.put('/:id', function(req, res) {
 var myQuery = {
     _id: req.params.id
 };
+console.log(myQuery);
 var newValues = {
   duration: req.body.duration,
   time: req.body.time,
-  date: req.boody.date,
+  date: req.body.date,
   mType: req.body.mType,
   notes: req.body.notes
 };
-    patients.update(
-     {_id: req.params.id },
-     {
-        $push: { appointments : newValues }
-     }
-).then(function(err) {
+console.log('new: ', newValues);
+    patients.updateOne(myQuery, newvalues).then(function(err) {
         if (!err) {
             res.send('nudes');
         } else {

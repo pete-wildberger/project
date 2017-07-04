@@ -48,6 +48,10 @@
 .newButton{
   float: right;
 }
+.profInfo{
+  height: 100px;
+  clear: both;
+}
 
 /* The side navigation menu */
 

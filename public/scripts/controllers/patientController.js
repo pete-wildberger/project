@@ -4,7 +4,7 @@ app.controller('PatientController', function($location, httpService, loggedInSer
   const P_ROUTE = '/patients';
   vm.newForm = false;
   vm.patientsArray = [];
-  vm.profileArray = [];
+  vm.patInfo = [];
 
   vm.go = function(path) {
     $location.path(path);
@@ -47,12 +47,12 @@ app.controller('PatientController', function($location, httpService, loggedInSer
 
   //Appointment(duration, time, date, type)
   vm.saveAppointment = function(id) {
-
+console.log('appointment: ', id);
     var appToSend = new Appointment(vm.inputed.durationIn,
       vm.inputed.dateIn,
       vm.inputed.timeIn,
       vm.inputed.mTypeIn);
-
+      console.log('controller: ', appToSend);
     httpService.putPost(P_ROUTE, id, appToSend).then(function(response) {
       console.log('response is: ', response);
       vm.showProfile(id);
@@ -78,18 +78,21 @@ app.controller('PatientController', function($location, httpService, loggedInSer
   };
 
   vm.showProfile = function(id){
-    console.log(id);
+
     httpService.getProfile('/profile', id).then(function(response) {
-      console.log('profile: ', response);
-      vm.profileArray = response;
-      console.log('profileArray', vm.profileArray);
+      console.log('showprofile: ', response);
+      loggedInService.profileView.push(response[0]);
     });
   };
 
+console.log('controller from service', loggedInService.profileView);
+vm.patInfo.push(loggedInService.profileView[0]);
+console.log('afterfunction', vm.patInfo);
 
   vm.goToProf = function(path, id) {
     vm.showProfile(id);
     $location.path(path);
-
   };
+
+
 });

@@ -25,6 +25,7 @@ app.service('httpService', function($http) {
   };
   sv.getProfile = function(path, id) {
     return $http.get(path + '/'+ id).then(function(response) {
+      console.log('service: ', response);
       return response.data;
     });
   };
@@ -35,6 +36,7 @@ app.service('httpService', function($http) {
     });
   };
   sv.putPost = function(path, id, its) {
+    console.log('its: ', its);
       return $http.put(path + '/'+ id, its).then(function(response){
         console.log('updated', response);
         return response;
