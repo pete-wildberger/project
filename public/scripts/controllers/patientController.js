@@ -90,6 +90,7 @@ vm.patInfo.push(loggedInService.profileView[0]);
 console.log('afterfunction', vm.patInfo);
 
   vm.goToProf = function(path, id) {
+    vm.patInfo = [];
     vm.showProfile(id);
     $location.path(path);
   };

@@ -38,15 +38,18 @@ var myQuery = {
     _id: req.params.id
 };
 console.log(myQuery);
-var newValues = {
-  duration: req.body.duration,
-  time: req.body.time,
-  date: req.body.date,
-  mType: req.body.mType,
-  notes: req.body.notes
-};
+var newValues = { $push:
+    { appointments: {
+      duration: req.body.duration,
+      time: req.body.time,
+      date: req.body.date,
+      mType: req.body.mType,
+      notes: req.body.notes
+            }
+          }
+        };
 console.log('new: ', newValues);
-    patients.updateOne(myQuery, newvalues).then(function(err) {
+    patients.findOneAndUpdate(myQuery, newValues, function(err) {
         if (!err) {
             res.send('nudes');
         } else {
