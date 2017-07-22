@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row" ng-if="pc.formHide">
+    <div class="col-xs-12">
+      <div class="tHeadDiv">
+        <form name="newForm">
+          <input type="text" placeholder="First Name" ng-model="pc.firstNameIn">
+          <input type="text" placeholder="Last Name" ng-model="pc.lastNameIn">
+          <input type='number' ng-model="pc.phoneIn" placeholder='Phone Number'>
+          <input type="email" placeholder="Email" ng-model="pc.emailIn">
+          <button type="button" ng-click="pc.savePatient()">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="patientBar">
+        <form name="patientUtil">
+          <input class="searchArea" type="text" ng-model="pc.searchPatient" placeholder="&#x1f50d Search">
+          <button class="newButton" type="button" ng-click="pc.newForm()">New Patient</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 patientInfo">
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Notes</th>
+          <th>Delete</th>
+        </tr>
+        <tr ng-repeat='x in pc.patientsArray | filter : pc.searchPatient | orderBy : "lastname" '>
+          <td>{{ x.firstname }}</td>
+          <td>{{ x.lastname }}</td>
+          <td>{{ x.phone }}</td>
+          <td>{{ x.email }}</td>
+          <td><button ng-click="pc.goToProf('/profile', x)">Profile</button></td>
+          <td><button class="delete" ng-click='pc.removePatient(x._id)'>Delete</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

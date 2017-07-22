@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>@Ease</title>
+  <!-- vendors -->
+  <script src="/vendors/angular.min.js" charset="utf-8"></script>
+  <script src="/vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="/vendors/sweetalert2.min.js" charset="utf-8"></script>
+  <script src="/vendors/xeditable.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendors/sweetalert2.min.css">
+  <link rel="stylesheet" href="/vendors/xeditable.min.css">
+
+  <!-- JS build -->
+
+  <!-- Javascript -->
+  <script src="/scripts/raw.js" charset="utf-8"></script>
+  <script src="/scripts/classes.js" charset="utf-8"></script>
+  <script src="/scripts/app.js" charset="utf-8"></script>
+  <script src="/scripts/ngconfig.js" charset="utf-8"></script>
+  <!-- Controllers -->
+  <script src="/scripts/controllers/ProjectController.js" charset="utf-8"></script>
+  <script src="/scripts/controllers/patientController.js" charset="utf-8"></script>
+  <script src="/scripts/controllers/appointCont.js" charset="utf-8"></script>
+  <script src="/scripts/controllers/ProfController.js" charset="utf-8"></script>
+  <script src="/scripts/controllers/notesController.js" charset="utf-8"></script>
+
+  </script>
+  <!-- Services -->
+  <script src="/scripts/services/http.Service.js" charset="utf-8"></script>
+
+  <!-- CSS/fonts -->
+<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body ng-app="myApp">
+  <main ng-controller="ProjectController as pc">
+    <!-- login -->
+    <div ng-if="pc.welcome" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 login">
+          <h1>@Ease</h1>
+          <form name="login" novalidate>
+            <input class="authIn" placeholder="username" ng-model="pc.userRegister" required>
+            <input class="authIn" placeholder="password" type="password" ng-model="pc.passwordRegister" required><br>
+            <button class="submit" ng-click="pc.logIn()" ng-disabled="login.$invalid">LOG IN</button>
+            <button class="submit" ng-click="pc.unwelcome()">REGISTER</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- registering -->
+    <div ng-if="pc.registering" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 login">
+          <h1>@Ease</h1>
+          <form name="register">
+            <input placeholder="username" ng-model="pc.username" required>
+            <input type="password" placeholder="password" ng-model="pc.password" required>
+            <input type="password" placeholder="password" ng-model="pc.password2" required>
+            <button class="registerButton" ng-click="pc.register()" ng-disabled="register.$invalid">SUBMIT</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- home page -->
+    <div ng-if="pc.loggedIn" class="container-fluid">
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a>Hi, {{pc.name}}</a>
+        <a class="navItem" href="#/!">Patients</a>
+        <a class="navItem"href="#!appointment">Appointments</a>
+        <a class="navItem"href="#!credits">Credits</a>
+        <a class="navItem" ng-click="pc.logOut()">Logout</a>
+      </div>
+
+    <!-- opens sidenav -->
+    <img ng-src="assets/barsHorizontal.png" onclick="openNav()" />
+
+    <div id="main">
+      <ng-view></ng-view>
+    </div>
+  </div>
+
+  </main>
+</body>
+
+</html>

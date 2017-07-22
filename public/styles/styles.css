@@ -1,0 +1,234 @@
+html, body{
+  font-family: 'Quicksand', sans-serif;
+}
+button{
+  background-color: #4062BB;
+  color: white;
+  border: none;
+}
+button:hover{
+  background-color: #52489C;
+}
+/*login*/
+
+.login {
+  margin: auto;
+  text-align: center;
+}
+
+.authIn {
+  font-size: 16px;
+  margin: 5px;
+}
+
+.submit {
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 128px;
+  margin: 5px;
+}
+
+/*end login*/
+
+/*patient page*/
+
+.patientInfo {
+  margin-top: 5px;
+  height: 365px;
+  overflow: scroll;
+}
+
+.patientBar {
+  width: 800px;
+  margin: auto;
+}
+.searchArea{
+  float: left;
+  margin: 5px;
+}
+.newButton{
+  float: right;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  width: 165px;
+  margin: 5px;
+}
+.noteButton{
+  background-color: #59C3C3;
+}
+.profInfo{
+  height: 120px;
+  width: 800px;
+  clear: both;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.tHeadDiv{
+  width: 800px;
+  clear: both;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #4062BB;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s
+}
+
+.sidenav .navItem:hover, .offcanvas .navItem:focus {
+  background-color: #52489C;
+  cursor: pointer;
+}
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/*notes page*/
+.note-button{
+  display: block !important;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    width: 150px;
+}
+
+/*canvas*/
+canvas {
+  background-image: url('/assets/better.jpeg');
+  background-size: 512px 512px;
+  background-repeat: no-repeat;
+  position: fixed;
+  left: 250px;
+  top: 100px;
+
+ }
+ .notesForm{
+   position: fixed;
+   left: 770px;
+   top: 30px;
+ }
+.notestarea{
+  margin: 3px;
+  display: block;
+}
+.notesInfo{
+  display: block;
+  margin: 1px;
+}
+.save{
+  background-color: #F45B69;
+}
+.delete{
+  background-color: #F45B69;
+}
+
+/*table styles*/
+
+table {
+  color: #333;
+  width: 800px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: auto;
+}
+
+td, th {
+  border: 1px solid transparent;
+  height: 30px;
+  transition: all 0.3s;
+}
+
+th {
+  background: #59C3C3;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+td {
+  background: #FAFAFA;
+  text-align: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #F45B69;
+    text-decoration: none;
+    cursor: pointer;
+}

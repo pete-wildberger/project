@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="patientBar">
+        <form name="patientUtil">
+          <input class="searchArea" type="text" ng-model="pc.searchPatient" placeholder="&#x1f50d Search">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 patientInfo">
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Massage type</th>
+          <th>Duration</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr ng-repeat="x in ac.appointments | filter : pc.searchPatient| orderBy: 'time'">
+          <td>{{ x.date | date: 'shortDate'}}</td>
+          <td>{{ x.time | date: 'mediumTime'}}</td>
+          <td>{{ x.name }}</td>
+          <td>{{ x.phone }}</td>
+          <td>{{ x.mType }}</td>
+          <td>{{ x.duration }}min</td>
+          <td ng-click="ac.goToNotes(x)"><button class="noteButton">Notes</button></td>
+          <td ng-click="ac.submitEmail(x)"><button>Email</button></td>
+          <td ng-click="ac.submitText(x)"><button>SMS</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="profInfo">
+        <span ><strong>Name: </strong>{{ nc.patient.firstname}} {{ nc.patient.lastname }}</span>
+        <!-- <span ><strong>Time: </strong>{{ nc.displayed.time | date: 'mediumTime'}}</span>
+      </div> -->
+      <div>
+        <canvas ng-mousemove="nc.findXY($event)" ng-click="nc.coords()" id="canvas" class='img-responsive' width="512px" height="512px"></canvas>
+      </div>
+      <div class="notesForm">
+        <h2>Notes</h2>
+        <form>
+          <input type="radio" name="Adhesion" value="0" ng-model="nc.painType" checked> <img ng-src="{{ nc.images[0].src }}" /> Adhesion <br>
+          <input type="radio" name="Hypertonicity" value="1" ng-model="nc.painType"> <img ng-src="{{ nc.images[1].src }}" /> Hypertonicity <br>
+          <input type="radio" name="Inflamation" value="2" ng-model="nc.painType"> <img ng-src="{{ nc.images[2].src }}" /> Inflammation <br>
+          <input type="radio" name="Rotation" value="3" ng-model="nc.painType"> <img ng-src="{{ nc.images[3].src }}" /> Rotation <br>
+          <input type="radio" name="Trigger Point" value="4" ng-model="nc.painType"> <img ng-src="{{ nc.images[4].src }}" /> Trigger Point <br>
+          <input type="radio" name="Tender" value="5" ng-model="nc.painType"> <img ng-src="{{ nc.images[5].src }}" /> Tender <br>
+          <input type="radio" name="Spasm" value="6" ng-model="nc.painType"> <img ng-src="{{ nc.images[6].src }}" /> Spasm <br>
+        </form>
+        <div>
+          <span class="notesInfo"><strong>Date: </strong>{{ nc.displayed.date | date: 'shortDate'}}</span>
+          <span class="notesInfo"><strong>Time: </strong>{{ nc.displayed.time | date: 'mediumTime'}}</span>
+          <span class="notesInfo"><strong>Type: </strong>{{ nc.displayed.mType }}</span>
+          <span class="notesInfo"><strong>Duration: </strong>{{ nc.displayed.duration }}min</span>
+        </div>
+
+        <button class="note-button" onclick="document.getElementById('subjective').style.display = 'block'">Subjective</button>
+        <button class="note-button" onclick="document.getElementById('objective').style.display = 'block'">Objective</button>
+        <button class="note-button" onclick="document.getElementById('assessment').style.display = 'block'">Assessment</button>
+        <button class="note-button" onclick="document.getElementById('plan').style.display = 'block'">Plan</button>
+        <button class="note-button save" ng-click="nc.saveIt()">Save</button>
+
+        <!-- The Modal -->
+        <div id="subjective" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="document.getElementById('subjective').style.display = 'none'">&times;</span>
+
+            <p><strong>Symptoms: </strong></p>
+            <p editable-text="nc.notes.s.symptoms">
+              {{ nc.notes.s.symptoms || 'empty' }}<br>
+            </p>
+            <p><strong>Activities of Daily Living: </strong></p>
+            <p editable-text="nc.notes.s.activities">
+              {{ nc.notes.s.activities || 'empty' }}
+            </p>
+          </div>
+        </div>
+
+        <div id="objective" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="document.getElementById('objective').style.display = 'none'">&times;</span>
+            <p><strong>Findings: </strong></p>
+            <p editable-text="nc.notes.o.findings">
+              {{ nc.notes.o.findings || 'empty' }}<br>
+            </p>
+            <p><strong>Techniques/Modalities: </strong></p>
+            <p editable-text="nc.notes.o.techniques">
+              {{ nc.notes.o.techniques || 'empty' }}<br>
+            </p>
+            <p><strong>Response to Treatment: </strong></p>
+            <p editable-text="nc.notes.o.response">
+              {{ nc.notes.o.response || 'empty' }}<br>
+            </p>
+          </div>
+        </div>
+
+        <div id="assessment" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="document.getElementById('assessment').style.display = 'none'">&times;</span>
+            <p><strong>Goals: Long-term/short-term</strong></p>
+            <p editable-text="nc.notes.a">
+              {{ nc.notes.a || 'empty' }}</p>
+          </div>
+        </div>
+
+        <div id="plan" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="document.getElementById('plan').style.display = 'none'">&times;</span>
+            <p><strong>Future Treatment:</strong></p>
+            <p editable-text="nc.notes.p">
+              {{ nc.notes.p || 'empty' }}</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
