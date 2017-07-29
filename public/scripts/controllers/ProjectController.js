@@ -6,10 +6,6 @@ app.controller('ProjectController', function($location, httpService) {
   vm.name = httpService.logInName;
   console.log('ProjectController');
 
-  vm.go = function(path) {
-    $location.path(path);
-  };
-
   vm.unwelcome = function() {
     console.log('unwelcome');
     vm.welcome = !vm.welcome;
@@ -98,7 +94,7 @@ app.controller('ProjectController', function($location, httpService) {
 
   vm.logOut = function() {
     console.log('logout');
-    vm.go('/');
+    $location.path('/');
     vm.name = '';
     httpService.logInName = '';
     vm.welcome = true;
