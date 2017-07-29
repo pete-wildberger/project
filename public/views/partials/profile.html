@@ -10,12 +10,12 @@
 
         </div>
         <div class="tHeadDiv" ng-if="pc.formHide">
-          <form name="newForm">
-            <input type="number" placeholder="Duration" ng-model="pc.inputed.durationIn">
-            <input type="date" placeholder="Date" ng-model="pc.inputed.dateIn">
-            <input type='time' placeholder='Time' ng-model="pc.inputed.timeIn">
-            <input type="text" placeholder="Massage type" ng-model="pc.inputed.mTypeIn">
-            <button type="button" ng-click="pc.saveAppointment(x._id)">Save</button>
+          <form name="newForm" novalidate>
+            <input type="number" placeholder="Duration" ng-model="pc.inputed.durationIn" required>
+            <input type="date" placeholder="Date" ng-model="pc.inputed.dateIn" required>
+            <input type='time' placeholder='Time' ng-model="pc.inputed.timeIn" required>
+            <input type="text" placeholder="Massage type" ng-model="pc.inputed.mTypeIn" required>
+            <button type="button" ng-click="pc.saveAppointment(x._id)" ng-disabled="newForm.$invalid">Save</button>
           </form>
         </div>
       </div>
