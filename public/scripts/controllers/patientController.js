@@ -3,11 +3,6 @@ app.controller('PatientController', function($location, httpService) {
   const vm = this;
   vm.formHide = false;
   vm.patientsArray = [];
-  // vm.patInfo = [];
-
-  vm.go = function(path) {
-    $location.path(path);
-  };
 
   //new patient
   vm.newForm = function() {
