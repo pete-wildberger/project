@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@Ease</title>
   <!-- vendors -->
   <script src="/vendors/angular.min.js" charset="utf-8"></script>
@@ -34,7 +34,7 @@
   <script src="/scripts/services/http.Service.js" charset="utf-8"></script>
 
   <!-- CSS/fonts -->
-<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
   <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
@@ -75,18 +75,18 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a>Hi, {{pc.name}}</a>
         <a class="navItem" href="#/!">Patients</a>
-        <a class="navItem"href="#!appointment">Appointments</a>
-        <a class="navItem"href="#!credits">Credits</a>
+        <a class="navItem" href="#!appointment">Appointments</a>
+        <a class="navItem" href="#!credits">Credits</a>
         <a class="navItem" ng-click="pc.logOut()">Logout</a>
       </div>
 
-    <!-- opens sidenav -->
-    <img ng-src="assets/barsHorizontal.png" onclick="openNav()" />
+      <!-- opens sidenav -->
+      <img ng-src="assets/barsHorizontal.png" onclick="openNav()" />
 
-    <div id="main">
-      <ng-view></ng-view>
+      <div id="main">
+        <ng-view></ng-view>
+      </div>
     </div>
-  </div>
 
   </main>
 </body>
