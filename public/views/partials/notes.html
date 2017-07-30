@@ -26,10 +26,10 @@
           <span class="notesInfo"><strong>Duration: </strong>{{ nc.displayed.duration }}min</span>
         </div>
 
-        <button class="note-button" onclick="document.getElementById('subjective').style.display = 'block'">Subjective</button>
-        <button class="note-button" onclick="document.getElementById('objective').style.display = 'block'">Objective</button>
-        <button class="note-button" onclick="document.getElementById('assessment').style.display = 'block'">Assessment</button>
-        <button class="note-button" onclick="document.getElementById('plan').style.display = 'block'">Plan</button>
+        <button id="subBtn" class="note-button">Subjective</button>
+        <button id="objBtn" class="note-button">Objective</button>
+        <button id="assBtn" class="note-button">Assessment</button>
+        <button id="planBtn" class="note-button">Plan</button>
         <button class="note-button save" ng-click="nc.saveIt()">Save</button>
 
         <!-- The Modal -->

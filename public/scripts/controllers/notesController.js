@@ -11,6 +11,24 @@ app.controller('NotesController', function($location, $filter, httpService) {
   console.log('arrtosend: ', vm.arrToSend);
   vm.images = httpService.imageArr;
 
+  var subBtn = document.getElementById('subBtn');
+  var objBtn = document.getElementById('objBtn');
+  var assBtn = document.getElementById('assBtn');
+  var planBtn = document.getElementById('planBtn');
+
+  subBtn.onclick = function() {
+    document.getElementById('subjective').style.display = 'block';
+  };
+  objBtn.onclick = function() {
+    document.getElementById('objective').style.display = 'block';
+  };
+  assBtn.onclick = function() {
+    document.getElementById('assessment').style.display = 'block';
+  };
+  planBtn.onclick = function() {
+    document.getElementById('plan').style.display = 'block';
+  };
+
   window.onclick = function(event) {
     id = event.target.getAttribute("id");
     if (event.target.getAttribute("class") == 'modal') {
