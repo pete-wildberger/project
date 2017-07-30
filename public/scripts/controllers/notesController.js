@@ -15,7 +15,8 @@ app.controller('NotesController', function($location, $filter, httpService) {
   var objBtn = document.getElementById('objBtn');
   var assBtn = document.getElementById('assBtn');
   var planBtn = document.getElementById('planBtn');
-
+  var close = document.getElementsByClassName('close');
+console.log('close', close);
   subBtn.onclick = function() {
     document.getElementById('subjective').style.display = 'block';
   };
@@ -28,6 +29,27 @@ app.controller('NotesController', function($location, $filter, httpService) {
   planBtn.onclick = function() {
     document.getElementById('plan').style.display = 'block';
   };
+
+  for (var i = 0; i < close.length; i++) {
+      close[i].addEventListener('click', (function(i) {
+          return function() {
+            id = this.parentNode.parentNode.getAttribute("id");
+            console.log('id', id);
+            if (this.parentNode.parentNode.getAttribute("class") == 'modal') {
+              document.getElementById(id).style.display = 'none';
+            }
+          };
+      })(i), false);
+    }
+
+// close.onclick = function(){
+//   console.log('click');
+//   id = this.target.parentNode.parentNode.getAttribute("id");
+//   console.log('id', id);
+//   if (event.target.getAttribute("class") == 'modal') {
+//     document.getElementById(id).style.display = 'none';
+//   }
+// };
 
   window.onclick = function(event) {
     id = event.target.getAttribute("id");
