@@ -3,26 +3,25 @@ var router = express.Router();
 var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var patients = require('../patients');
+var patients = require('../modules/patients');
 
-
-router.use(bodyParser.urlencoded({
-  extended: true
-}));
+router.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
 router.use(bodyParser.json());
-
-
 
 router.put('/:id', function(req, res) {
   console.log('db notes update', req.body);
   var myQuery = {
-    '_id': req.params.id,
+    _id: req.params.id,
     'appointments.id': req.body.arrID
   };
   //
   console.log('query, ', myQuery);
 
-  console.log("-----------------", req.body);
+  console.log('-----------------', req.body);
   var newValues = {
     $set: {
       'appointments.$.notes': {
@@ -32,7 +31,6 @@ router.put('/:id', function(req, res) {
         a: req.body.appointment.a,
         p: req.body.appointment.p,
         spots: req.body.appointment.spots
-
       }
     }
   };

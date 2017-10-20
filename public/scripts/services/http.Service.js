@@ -25,8 +25,7 @@ app.service('httpService', function($http) {
   var img7 = new Image();
   img7.src = '/assets/omegasm.png';
 
-
-  sv.imageArr= [img0, img1, img2, img3, img4, img5, img6, img7 ];
+  sv.imageArr = [img0, img1, img2, img3, img4, img5, img6, img7];
 
   // httpServices
   sv.getPosts = function(path) {
@@ -35,7 +34,8 @@ app.service('httpService', function($http) {
     });
   };
   sv.getProfiles = function(path, id) {
-    return $http.get(path + '/'+ id).then(function(response) {
+    console.log(path + '/' + id);
+    return $http.get(path + '/' + id).then(function(response) {
       console.log('service: ', response);
       sv.patientsArray = response.data;
       console.log('service array', sv.patientsArray);
@@ -51,16 +51,15 @@ app.service('httpService', function($http) {
   };
   sv.putPost = function(path, id, its) {
     console.log('its: ', its);
-      return $http.put(path + id, its).then(function(response){
-        console.log('updated', response);
-        return response;
-      });
-    };
+    return $http.put(path + id, its).then(function(response) {
+      console.log('updated', response);
+      return response;
+    });
+  };
   sv.deletePost = function(path, id) {
-      return $http.delete(path + '/'+ id).then(function(response){
-        console.log('deleted', response);
-        return response;
-      });
-    };
-
+    return $http.delete(path + '/' + id).then(function(response) {
+      console.log('deleted', response);
+      return response;
+    });
+  };
 });
