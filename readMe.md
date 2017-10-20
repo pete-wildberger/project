@@ -19,3 +19,5 @@ The user also has the option to send reminder emails or texts to their patients 
 * Bootstrap
 * SweetAlert2
 * JavaScript ES6
+
+I have begun to use this project as a testing ground for automated testing of my API using Mocha.js
