@@ -16,7 +16,7 @@ router.post('/', function(req, res) {
   console.log('in patients.js, post to /, req.body is:', req.body);
   patients(req.body)
     .save()
-    .then(function(err) {
+    .then(function(file, err) {
       if (!err) {
         res.send('nudes');
       } else {

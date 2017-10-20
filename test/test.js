@@ -16,7 +16,28 @@ describe('GET /patients/:id', function() {
         res.should.have.status(200);
         res.should.be.json; // jshint ignore:line
         res.body.should.be.a('array');
-        res.body.length.should.equal(9);
+        res.body.length.should.equal(14);
+        done();
+      });
+  });
+});
+describe('POST /patients', function() {
+  it('should add a ne patient', function(done) {
+    chai
+      .request(server)
+      .post('/patients')
+      .send({
+        therapist: 'guest',
+        firstname: 'testy',
+        lastname: 'testerson',
+        phone: 666666666,
+        email: 'testy@test.com'
+      })
+      .end(function(err, res) {
+        res.should.have.status(200);
+        res.should.be.json; // jshint ignore:line
+        res.body.should.be.a('object');
+        res.body.should.equal('nudes');
 
         done();
       });
